@@ -3,6 +3,7 @@ import Profile from "../../Image/Profile.png";
 import Comments from "../../Image/comments.png";
 import Heart from "../../Image/heart-like.png";
 import Share from "../../Image/share.png";
+import { Link } from "react-router-dom";
 
 const PreviewVideo = ({ setStepCount }) => {
 	return (
