@@ -62,7 +62,7 @@ function App() {
           </div>
           <div className="ml-1">Shop</div>
         </div>
-        <div className="ml-4" onClick={goToCart}>
+        <div className="ml-auto" onClick={goToCart}>
           <Badge count={selectedProductIndex.length}>
             <BuyIcon />
           </Badge>

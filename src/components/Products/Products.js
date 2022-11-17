@@ -35,7 +35,7 @@ const ProductCard = (props) => {
       <div className="w-[80%]">
         <div className="font-semibold text-base desc title">{name}</div>
         <div>
-         ₹{Math.floor(mrp)} <span className="text-[red]">(51% off)</span>
+         ₹{Math.floor(mrp)}
         </div>
         <div className="desc">{desc}</div>
       </div>
