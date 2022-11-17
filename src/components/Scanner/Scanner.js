@@ -35,8 +35,6 @@ const Scanner = ({ isModalOpen, handleCancel }) => {
       width={"100%"}
     >
       <QrReader
-        facingmode={"rear"}
-        constraints={ {facingMode: 'rear'}}
         delay={100}
         style={previewStyle}
         onError={(err) => {
