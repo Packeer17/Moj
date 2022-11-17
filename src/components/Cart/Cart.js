@@ -1,13 +1,14 @@
 import { Button, Divider, Modal } from "antd";
 import { useMemo, useState } from "react";
 import "./Cart.scss";
-import { useNavigate } from "react-router-dom";
 
 const Cart = ({
 	selectedProductIndex,
 	products,
 	advertiserDetails,
 	onRemoveProduct,
+	setRoute,
+	setSelectedProductIndex,
 }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	let seletectedProducts = products.filter((item) =>
@@ -20,12 +21,9 @@ const Cart = ({
 		}, 0);
 	}, [seletectedProducts]);
 
-	let navigate = useNavigate();
 	const handleOk = () => {
-		let search = window.location.search;
-		let params = new URLSearchParams(search);
-		let businessParams = params.get("business");
-		navigate(`/?business=${businessParams}`);
+		setSelectedProductIndex([]);
+		setRoute(`/`);
 	};
 
 	return (

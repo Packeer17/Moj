@@ -3,13 +3,21 @@ import GridView from "../GridView/GridView";
 import { useState } from "react";
 
 const Moj = () => {
-  const [stepCount, setStepCount] = useState(1);
-  return (
-    <>
-      {stepCount === 1 && <GridView setStepCount={() => setStepCount(2)}/>}
-      {stepCount === 2 && <PreviewVideo setStepCount={() => window.open("/?business=blazon","self")} />}
-    </>
-  );
+	const [stepCount, setStepCount] = useState(1);
+	return (
+		<>
+			{stepCount === 1 && (
+				<GridView setStepCount={() => setStepCount(2)} />
+			)}
+			{stepCount === 2 && (
+				<PreviewVideo
+					setStepCount={() =>
+						window.open("/?business=oxiClear", "_self")
+					}
+				/>
+			)}
+		</>
+	);
 };
 
 export default Moj;
