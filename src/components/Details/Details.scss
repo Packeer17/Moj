@@ -1,0 +1,17 @@
+.banner {
+	height: 160px;
+	border-radius: 20px 20px 0 0;
+	background-image: url("https://res.cloudinary.com/swiggy/image/upload/h_320,c_fit/f_auto/minis/no_brand_background_fallback");
+	background-color: rgb(181, 42, 107);
+}
+
+.shop-icon {
+	padding: 30px;
+	position: relative;
+	top: -40px;
+}
+
+.our-products {
+	align-items: center;
+	justify-content: center;
+}
