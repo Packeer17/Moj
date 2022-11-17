@@ -2,6 +2,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Col, Row, Image } from "antd";
 import "./GridView.scss";
 import MaskImage from "../../Image/MaskImage.jpg";
+import SareeImage from "../../Image/saree.jpeg";
 
 function GridView({setStepCount}) {
 	const onProductClick = () => {
@@ -57,14 +58,7 @@ function GridView({setStepCount}) {
 							className="text-sm text-slate-600 pl-2 cursor-pointer"
 							onClick={onProductClick}
 						>
-							<img src={MaskImage} height="auto" alt="product" />
-						</Col>
-						<Col
-							xs={8}
-							className="text-sm text-slate-600 pl-2 cursor-pointer"
-							onClick={onProductClick}
-						>
-							<img src={MaskImage} height="auto" alt="product" />
+							<img src={SareeImage} height="auto" alt="product" />
 						</Col>
 					</Row>
 				</Col>
