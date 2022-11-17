@@ -11,7 +11,7 @@ const Cart = ({
 	setSelectedProductIndex,
 }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	let seletectedProducts = products.filter((item) =>
+	let seletectedProducts = products?.filter((item) =>
 		selectedProductIndex.includes(item.id)
 	);
 

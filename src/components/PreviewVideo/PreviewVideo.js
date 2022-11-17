@@ -13,6 +13,7 @@ const PreviewVideo = ({ setStepCount }) => {
         dangerouslySetInnerHTML={{
           __html: `
         <video
+        className="videoTag"
           loop
           muted
           autoplay
@@ -32,7 +33,7 @@ const PreviewVideo = ({ setStepCount }) => {
       </div>
       <div className="flex top-text">
         <Link to="/feed">
-        Followings
+          Followings
           {/* <div className="following">Following</div> */}
         </Link>
         <div className="ml-4">For you</div>
