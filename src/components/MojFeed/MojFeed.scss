@@ -1,11 +1,23 @@
 .header {
-	.ant-input {
-		padding: 5px !important;
-		background-color: gray;
-	}
-	.ant-input-affix-wrapper {
-		background-color: gray;
-		border-radius: 5px;
-		border: 0;
-	}
+  .ant-input {
+    padding: 5px !important;
+    background-color: gray;
+  }
+  .ant-input-affix-wrapper {
+    background-color: gray;
+    border-radius: 5px;
+    border: 0;
+  }
+  .mojfeedImage {
+    background-image: url("../../Image/MojFeed.jpg");
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media only screen and (min-width: 768px) {
+      background-size: contain;
+    }
+  }
 }

@@ -9,7 +9,7 @@ const Products = ({
 }) => {
   return (
     <>
-      {products?.map((product, index) => (
+      {products?.map((product) => (
         <div key={product.id} className="mt-1">
           <ProductCard
             product={product}

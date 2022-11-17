@@ -15,11 +15,11 @@ const router = createBrowserRouter([
 		element: <App />,
 	},
 	{
-		path: "moj",
+		path: "feed",
 		element: <MojFeed />,
 	},
   {
-		path: "preview",
+		path: "moj",
 		element: <Moj />,
 	},
 ]);

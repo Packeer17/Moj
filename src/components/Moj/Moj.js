@@ -1,11 +1,15 @@
-import PreviewVideo from "../PreviewVideo/PreviewVideo"
-import {useState} from "react"
+import PreviewVideo from "../PreviewVideo/PreviewVideo";
+import GridView from "../GridView/GridView";
+import { useState } from "react";
 
-const Moj=()=>{
-    const [stepCount,setStepCount] = useState(1)
-    return(
-        <PreviewVideo setStepCount={()=>setStepCount(2)}/>
-    )
-}
+const Moj = () => {
+  const [stepCount, setStepCount] = useState(1);
+  return (
+    <>
+      {stepCount === 1 && <GridView setStepCount={() => setStepCount(2)}/>}
+      {stepCount === 2 && <PreviewVideo setStepCount={() => window.open("/?business=blazon","self")} />}
+    </>
+  );
+};
 
-export default Moj
+export default Moj;

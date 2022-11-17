@@ -16,7 +16,7 @@ const PreviewVideo = ({setStepCount}) => {
           muted
           autoplay
           playsinline
-          src="https://cdn.sharechat.com/2685532e_1667841651227_sc.mp4"
+          src="https://gamewall-pwa.sharechat.com/self-serve/video/mask.mp4"
         />,
       `,
         }}

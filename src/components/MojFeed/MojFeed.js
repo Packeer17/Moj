@@ -1,7 +1,6 @@
-import { Row, Col, Input, Image, Tooltip } from "antd";
+import { Row, Col, Input } from "antd";
 import { SearchOutlined, QrcodeOutlined } from "@ant-design/icons";
 import "./MojFeed.scss";
-import MojFeedImage from "../../Image/MojFeed.jpg";
 import Scanner from "../Scanner/Scanner";
 import { useState } from "react";
 
@@ -12,7 +11,7 @@ const MojFeed = () => {
 		<div className="header h-screen object-contain border-2 overflow-hidden">
 			<Row
 				align="middle"
-				className="bg-black p-3 fixed z-10 w-[366px] header"
+				className="bg-black p-3 fixed z-10 w-[100%] header"
 			>
 				<Col>
 					<Input
@@ -39,14 +38,7 @@ const MojFeed = () => {
 					/>
 				</Col>
 			</Row>
-			<Row className=" height-">
-				<img
-					src={MojFeedImage}
-					// height="100%"
-					width="466px"
-					className="mt-[61px]"
-					alt="moj"
-				/>
+			<Row className="mojfeedImage">
 			</Row>
 			<Scanner isModalOpen={isModalOpen} />
 		</div>

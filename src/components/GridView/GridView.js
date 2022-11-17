@@ -1,8 +1,12 @@
 import { MenuOutlined } from "@ant-design/icons";
 import { Col, Row, Image } from "antd";
-import React from "react";
+import "./GridView.scss";
+import MaskImage from "../../Image/MaskImage.jpg";
 
-function GridView() {
+function GridView({setStepCount}) {
+	const onProductClick = () => {
+		setStepCount()
+	};
 	return (
 		<div className="grid-view">
 			<Row className="container">
@@ -16,7 +20,7 @@ function GridView() {
 					<Row className="user-details">
 						<Col>
 							<Image
-								width={100}
+								width={79}
 								src="https://cdn.sharechat.com/246f21a5_1659611960466_sc.jpeg"
 								className="user-image"
 							></Image>
@@ -39,7 +43,30 @@ function GridView() {
 							</Row>
 						</Col>
 					</Row>
-					<Row className="caption">Enter Bio...</Row>
+					<Row className="caption mt-2">Enter Bio...</Row>
+					<Row className="pt-20">
+						<Col
+							xs={8}
+							className="text-sm text-slate-600 pl-2 cursor-pointer"
+							onClick={onProductClick}
+						>
+							<img src={MaskImage} height="auto" alt="product" />
+						</Col>
+						<Col
+							xs={8}
+							className="text-sm text-slate-600 pl-2 cursor-pointer"
+							onClick={onProductClick}
+						>
+							<img src={MaskImage} height="auto" alt="product" />
+						</Col>
+						<Col
+							xs={8}
+							className="text-sm text-slate-600 pl-2 cursor-pointer"
+							onClick={onProductClick}
+						>
+							<img src={MaskImage} height="auto" alt="product" />
+						</Col>
+					</Row>
 				</Col>
 			</Row>
 		</div>
