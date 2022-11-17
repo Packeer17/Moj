@@ -38,9 +38,11 @@ const MojFeed = () => {
 					/>
 				</Col>
 			</Row>
-			<Row className="mojfeedImage">
-			</Row>
-			<Scanner isModalOpen={isModalOpen} />
+			<Row className="mojfeedImage"></Row>
+			<Scanner
+				isModalOpen={isModalOpen}
+				handleCancel={() => setIsModalOpen(false)}
+			/>
 		</div>
 	);
 };
