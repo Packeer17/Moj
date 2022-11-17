@@ -1,11 +1,49 @@
 import "./App.scss";
 import "antd/dist/antd.css";
-// import GridView from "./GridView";
-import Prodcuts from "./components/Products/Products";
+import Products from "./components/Products/Products";
 import BuyIcon from "./components/BuyIcon/BuyIcon";
-import { Badge } from "antd";
+import { Badge, Spin } from "antd";
+import { db } from "./firebase/firebase";
+import { onValue, ref } from "firebase/database";
+
+import { useEffect, useState } from "react";
 
 function App() {
+  const [advertiserDetails, setAdvertiserDetails] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
+  const [selectedProductIndex,setSelectedProductIndex] = useState([])
+
+  useEffect(() => {
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let businessParams = params.get("business");
+	getBusinessDetails(businessParams)
+  }, []);
+
+  const getBusinessDetails=(businessName)=>{
+	setIsFetching(true)
+ 	const query = ref(db, `Stores/${businessName}`);
+    return onValue(query, (snapshot) => {
+      const data = snapshot.val();
+      if (snapshot.exists()) {
+    	setAdvertiserDetails(data)
+    		console.log(data)
+      }else{
+    	setAdvertiserDetails([])
+      }
+	  setIsFetching(false)
+    });
+  }
+
+  const onAddProduct=(index)=>{
+	setSelectedProductIndex([...selectedProductIndex,index])
+  }
+
+  const onRemoveProduct=(index)=>{
+	if(selectedProductIndex.includes(index)){
+		setSelectedProductIndex(selectedProductIndex.filter(el=>el!==index))
+	}
+  }
   return (
     <div className="app">
       <header className="bg-[white] p-4 flex items-center">
@@ -16,14 +54,14 @@ function App() {
           <div className="ml-1">Shop</div>
         </div>
         <div className="ml-4">
-          <Badge count={2}>
+          <Badge count={selectedProductIndex.length}>
             <BuyIcon />
           </Badge>
         </div>
       </header>
       <div className="app-body">
-        {/* <GridView></GridView> */}
-        <Prodcuts />
+		{isFetching && <Spin/>}
+        {!isFetching &&<Products products={advertiserDetails?.products || []} selectedProductIndex={selectedProductIndex} onAddProduct={onAddProduct} onRemoveProduct={onRemoveProduct}/>}
       </div>
     </div>
   );
