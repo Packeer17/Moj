@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import MojFeed from "./components/MojFeed/MojFeed";
+import GridView from "./components/GridView/GridView";
 
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
 	{
 		path: "moj",
 		element: <MojFeed />,
+	},
+	{
+		path: "profile",
+		element: <GridView />,
 	},
 ]);
 
