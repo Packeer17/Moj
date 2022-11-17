@@ -1,8 +1,14 @@
 import { MenuOutlined } from "@ant-design/icons";
 import { Col, Row, Image } from "antd";
-import React from "react";
+import React, { useState } from "react";
+import "./GridView.scss";
+import MaskImage from "../../Image/MaskImage.jpg";
 
 function GridView() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const onProductClick = () => {
+		setIsModalOpen(true);
+	};
 	return (
 		<div className="grid-view">
 			<Row className="container">
@@ -39,7 +45,30 @@ function GridView() {
 							</Row>
 						</Col>
 					</Row>
-					<Row className="caption">Enter Bio...</Row>
+					<Row className="caption mt-2">Enter Bio...</Row>
+					<Row className="pt-20">
+						<Col
+							xs={8}
+							className="text-sm text-slate-600 pl-2 cursor-pointer"
+							onClick={onProductClick}
+						>
+							<img src={MaskImage} height="auto" alt="product" />
+						</Col>
+						<Col
+							xs={8}
+							className="text-sm text-slate-600 pl-2 cursor-pointer"
+							onClick={onProductClick}
+						>
+							<img src={MaskImage} height="auto" alt="product" />
+						</Col>
+						<Col
+							xs={8}
+							className="text-sm text-slate-600 pl-2 cursor-pointer"
+							onClick={onProductClick}
+						>
+							<img src={MaskImage} height="auto" alt="product" />
+						</Col>
+					</Row>
 				</Col>
 			</Row>
 		</div>
