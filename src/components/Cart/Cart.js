@@ -84,12 +84,12 @@ const Cart = ({
 							confirmation
 						</div>
 						<div>
-							Full refund if order is cancelled before
-							confirmation
+							No refund if the order is already accepted or
+							dispatched
 						</div>
 						<div>
-							Full refund if order is cancelled before
-							confirmation
+							For any queries on cancellations, please chat with
+							the seller
 						</div>
 					</div>
 				</div>
