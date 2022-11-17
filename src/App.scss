@@ -37,3 +37,50 @@
 		transform: rotate(360deg);
 	}
 }
+
+.grid-view {
+	color: white;
+	background-color: gray;
+	.container {
+		width: 500px;
+		margin: auto;
+		padding: 20px;
+		height: 100vh;
+		background-color: black;
+	}
+	.moj-app {
+		text-align: left;
+		font-size: 20px;
+		font-weight: 600px;
+	}
+	.console-log {
+		border: red dashed 2px;
+	}
+	.moj-user {
+		margin-right: auto;
+		font-weight: 600;
+	}
+	.user-details {
+		padding-top: 20px;
+	}
+	.user-image {
+		object-fit: contain;
+		border-radius: 50%;
+		margin-right: 20px;
+	}
+	.user-handle {
+		padding-left: 20px;
+		font-weight: 600;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.user-popularity {
+		margin-left: 40px;
+	}
+	.caption {
+		font-size: 14px;
+		font-weight: 300;
+		color: gray;
+	}
+}
