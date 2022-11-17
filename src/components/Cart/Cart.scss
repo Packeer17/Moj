@@ -1,0 +1,17 @@
+.cart-left{
+    width: 65%;
+    height: fit-content;
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.cart-right{
+    width: 30%;
+    height: 19rem;
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        margin-left:0;
+        margin-top: 1rem;
+    }
+}

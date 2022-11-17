@@ -13,7 +13,6 @@ const Products = ({
         <div key={product.id} className="mt-1">
           <ProductCard
             product={product}
-            index={index}
             onAddProduct={onAddProduct}
             onRemoveProduct={onRemoveProduct}
             selectedProductIndex={selectedProductIndex}
@@ -27,16 +26,16 @@ const Products = ({
 export default Products;
 
 const ProductCard = (props) => {
-  const { name, desc, imageUrl, mrp } = props.product;
-  const { selectedProductIndex, index, onRemoveProduct, onAddProduct } = props;
-  const isSelected = selectedProductIndex.includes(index);
+  const { name, desc, imageUrl, mrp,id } = props.product;
+  const { selectedProductIndex, onRemoveProduct, onAddProduct } = props;
+  const isSelected = selectedProductIndex.includes(id);
 
   return (
     <div className="flex p-2 products-card border-solid border-2 border-grey-400 bg-[white]">
       <div className="w-[80%]">
         <div className="font-semibold text-base desc title">{name}</div>
         <div>
-          {Math.floor(mrp)} <span className="text-[red]">(51% off)</span>
+         ₹{Math.floor(mrp)} <span className="text-[red]">(51% off)</span>
         </div>
         <div className="desc">{desc}</div>
       </div>
@@ -51,7 +50,7 @@ const ProductCard = (props) => {
           <Button
             type={isSelected ? "primary" : null}
             onClick={() =>
-              isSelected ? onRemoveProduct(index) : onAddProduct(index)
+              isSelected ? onRemoveProduct(id) : onAddProduct(id)
             }
           >
             {isSelected ? "Remove" : "Add"}
