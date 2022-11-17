@@ -1,6 +1,8 @@
 import "./App.scss";
 import "antd/dist/antd.css";
+// import GridView from "./GridView";
 import Products from "./components/Products/Products";
+import Details from "./components/Details/Details";
 import BuyIcon from "./components/BuyIcon/BuyIcon";
 import { Badge, Spin } from "antd";
 import { db } from "./firebase/firebase";
@@ -71,12 +73,15 @@ function App() {
           <>
             {isFetching && <Spin />}
             {!isFetching && (
+			<>
+			  <Details advertiserDetails={advertiserDetails}></Details>
               <Products
                 products={advertiserDetails?.products || []}
                 selectedProductIndex={selectedProductIndex}
                 onAddProduct={onAddProduct}
                 onRemoveProduct={onRemoveProduct}
               />
+			  </>
             )}
           </>
         )}

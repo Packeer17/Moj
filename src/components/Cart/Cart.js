@@ -17,7 +17,7 @@ const Cart = ({ selectedProductIndex, products, advertiserDetails,onRemoveProduc
     <div className="flex flex-wrap mt-4">
       <div className="bg-[white] p-4 cart-left rounded-xl">
         <div className="font-semibold">
-          {advertiserDetails?.contactInfo?.emailId}
+          {advertiserDetails?.businessName}
         </div>
         <div>{advertiserDetails?.location}</div>
         <Divider />
@@ -36,7 +36,8 @@ const Cart = ({ selectedProductIndex, products, advertiserDetails,onRemoveProduc
         <Divider />
       </div>
       {selectedProductIndex.length > 0 && (
-        <div className="bg-[white] p-4 ml-4 cart-right rounded-xl">
+          <div className="cart-right ml-4 ">
+        <div className="bg-[white] rounded-xl  p-4">
           <div className="font-semibold">Bill Details</div>
           <ListItem title={'Cart total'} amount={`₹${getCartTotal}`}/>
           <ListItem title={'Discount'} amount={`₹100`}/>
@@ -44,6 +45,19 @@ const Cart = ({ selectedProductIndex, products, advertiserDetails,onRemoveProduc
           <ListItem title={'Delivery'} amount={'--'}/>
           <Divider/>
           <ListItem title={'To Pay'}  amount={`₹${getCartTotal-100}`}/>
+        </div>
+        <div className="mt-4 p-4 bg-[white] rounded-xl">
+        <div className="font-semibold">Cancellation Policy</div>
+        <div>
+        Full refund if order is cancelled before confirmation
+        </div>
+        <div>
+        Full refund if order is cancelled before confirmation
+        </div>
+        <div>
+        Full refund if order is cancelled before confirmation
+        </div>
+        </div>
         </div>
       )}
     </div>
