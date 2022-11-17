@@ -6,6 +6,8 @@ import MojFeed from "./components/MojFeed/MojFeed";
 
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Moj from "./components/Moj/Moj";
+
 
 const router = createBrowserRouter([
 	{
@@ -15,6 +17,10 @@ const router = createBrowserRouter([
 	{
 		path: "moj",
 		element: <MojFeed />,
+	},
+  {
+		path: "preview",
+		element: <Moj />,
 	},
 ]);
 
