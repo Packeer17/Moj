@@ -7,7 +7,7 @@ const Moj = () => {
   return (
     <>
       {stepCount === 1 && <GridView setStepCount={() => setStepCount(2)}/>}
-      {stepCount === 2 && <PreviewVideo setStepCount={() => window.open("/?business=blazon","self")} />}
+      {stepCount === 2 && <PreviewVideo setStepCount={() => window.open("/?business=blazon","_self")} />}
     </>
   );
 };
