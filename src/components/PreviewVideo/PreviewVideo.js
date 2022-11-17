@@ -32,7 +32,8 @@ const PreviewVideo = ({ setStepCount }) => {
       </div>
       <div className="flex top-text">
         <Link to="/feed">
-          <div className="following">Following</div>
+        Followings
+          {/* <div className="following">Following</div> */}
         </Link>
         <div className="ml-4">For you</div>
       </div>
